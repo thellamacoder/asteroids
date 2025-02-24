@@ -1,8 +1,8 @@
-import pygame
+import pygame, constants
 
 def main():
-    print("Starting Asteroids!")
-
+    print(f"Starting Asteroids!")
+    print(f"Screen width: {constants.SCREEN_WIDTH}\nScreen height: {constants.SCREEN_HEIGHT}")
 
 # This is the end of the file
 
