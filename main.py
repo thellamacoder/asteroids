@@ -1,5 +1,7 @@
 import pygame
 from constants import *
+from circleshape import CircleShape
+from player import Player
 
 def main():
     print(f"Starting Asteroids!")
@@ -12,7 +14,7 @@ def main():
     clock = pygame.time.Clock()
     # Delta time (dt) to hold the change in time
     dt = 0
-
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # Game Loop
     while True:
@@ -20,8 +22,9 @@ def main():
             if event.type == pygame.QUIT:
                 return
         pygame.Surface.fill(screen,color="black", )
+        player.draw(screen)
         pygame.display.flip()
-
+        
 
         # this is the end of the game loop
         # the game loop won't exceed the tick time (in this case, the loop will 
