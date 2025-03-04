@@ -34,11 +34,17 @@ def main():
             if event.type == pygame.QUIT:
                 return
         updatable.update(dt)
+        for Asteroid in asteroids:
+            if asteroid.collides_with(player):
+                print("Game over!")
+                sys.exit()
+
         pygame.Surface.fill(screen,color="black", )
+
         for sprite in drawable:
             sprite.draw(screen)
+
         pygame.display.flip()
-        
 
         # this is the end of the game loop
         # the game loop won't exceed the tick time (in this case, the loop will 
