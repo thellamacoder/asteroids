@@ -45,6 +45,11 @@ def main():
                 print("Game over!")
                 sys.exit()
 
+            for shot in shots:
+                if asteroid.collides_with(shot):
+                    shot.kill()
+                    asteroid.kill()
+
         pygame.Surface.fill(screen,color="black", )
 
         for sprite in drawable:
